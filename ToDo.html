@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="ToDoStyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h1>To Do list</h1>
+    <!-- HOME -->
+    <section id="ToDo-Home"></section> 
+    <section>    
+    <div id="Shar">
+        
+        <h2 style="color: rgb(242, 216, 253); font-size: 2rem;">Make your own To-Do list!</h2>
+        <br>
+        <div class="container">
+            <input type="text" placeholder="Enter a new task" :style="{'background-color':color}" v-model="task" @keyup.enter="addTask">
+            <button @click="addTask"><i class="fa fa-pencil fa-fw"></i></button>
+
+        </div>
+        <br><br><br>
+
+        <ul class="listOfTasks">
+            <li v-for="(t,index) in tasklist" :key="index" >{{t}}<button><i @click="removeTask" class="fa fa-trash fa-fw"></i></button></li>
+        </ul>
+    </div>
+    </section>
+
+    <!-- js source -->
+    <script src="todo.js"></script>
+
+
+   
+</body>
+</html>
